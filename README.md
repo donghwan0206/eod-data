@@ -295,6 +295,18 @@ resp = client.get_search_instrument(query_string='crypto')
 resp = client.get_search_instrument(query_string='Chile', bonds_only=1)
 ```
 
+- **Symbol Change History**: With this API endpoint, you will get a symbol change history. The history starts from 2022-07-22 and is updated on daily basis. Only US exchanges are supported for the moment, other exchanges are coming.
+	- Parameters:
+		- ```from_```(str) and ```to```(str): Optional – the format is ‘YYYY-MM-DD’. If you need data from Jul 22, 2022, to Aug 10, 2022, you should use ```from_='2022-07-22'``` and ```to='2022-08-10'```.
+	- Usage:
+```python
+# Get symbol change history 
+resp = client.get_symbol_change_history()
+# Get symbol change history from 2022-07-22
+resp = client.get_symbol_change_history(from_='2022-07-22')
+```
+
+
 ### Alternative Financial Data [:arrow_up:](#eod-historical-data-sdk)
 - **Sentiment Financial Data**: Retrieve sentimental data calculated from the EOD historical data API. The aggregated sentiment data from the EOD historical API is collected from the news (and in the nearest future from tweets) for stocks, ETFs, Forex, and cryptocurrencies data. The data is aggregated by day.
 	- Paramaters:

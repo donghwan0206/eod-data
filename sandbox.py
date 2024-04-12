@@ -103,7 +103,8 @@ resp = client.get_search_instrument(query_string='Chile', bonds_only=1) #
 # Stock Market Screener API
 resp = client.get_screener_signals()
 resp = client.get_instrument_screener(signals='wallstreet_hi')
-
+# Symbol Change History API
+resp = client.get_symbol_change_history()
 
 # Questions and changes
 
